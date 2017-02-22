@@ -25,8 +25,8 @@ class Application extends React.Component {
     const b = parseInt(this.state.attempts);
     const c = parseInt(this.state.yards);
     const d = parseInt(this.state.touchdowns);
-    const e = parseInt(this.state.interceptions);            
-    alert(a + b + c + d);
+    const e = parseInt(this.state.interceptions);
+    alert(a + b + c + d + e);
     event.preventDefault();
   }
 
