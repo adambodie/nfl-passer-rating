@@ -1,8 +1,8 @@
-function aValue (completions, attempts) {
+var aValue = (completions, attempts) => {
   if (attempts < completions) {
-    console.log("More completions than attempts not allowed");
+    return "More completions than attempts not allowed";
   } else {
-      let a = (completions/attempts - 0.3) * 5;
+      let a = ((completions/attempts) - 0.3) * 5;
       if (a > 2.375) {
         a = 2.375;
       }
@@ -12,3 +12,5 @@ function aValue (completions, attempts) {
       return a;
     }
 }
+
+module.exports = aValue;
