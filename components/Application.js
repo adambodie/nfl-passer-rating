@@ -1,5 +1,7 @@
 // Libs
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Header from './Header';
 
 class Application extends React.Component {
   constructor(props) {
@@ -32,29 +34,24 @@ class Application extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Completions:
-          <input type="text" name="completions" value={this.state.completions} onChange={this.handleChange} />
-        </label>
-        <label>
-          Attempts:
-          <input type="text" name="attempts" value={this.state.attempts} onChange={this.handleChange}/>
-        </label>
-        <label>
-          Yards:
-          <input type="text" name="yards" value={this.state.yards} onChange={this.handleChange} />
-        </label>
-        <label>
-          Touchdowns:
-          <input type="text" name="touchdowns" value={this.state.touchdowns} onChange={this.handleChange} />
-        </label>
-        <label>
-          Interceptions:
-          <input type="text" name="interceptions" value={this.state.interceptions} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+      <Header />
+          <div className="row">
+            <div className="column medium-3">
+              <img class="thumbnail" src="https://placehold.it/850x850"/>
+            </div>
+            <div className="column medium-9">
+              <form onSubmit={this.handleSubmit}>
+                  <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
+                  <input type="text" name="attempts" placeholder="Attempts" value={this.state.attempts} onChange={this.handleChange}/>
+                  <input type="text" name="yards" placeholder="Yards" value={this.state.yards} onChange={this.handleChange} />
+                  <input type="text" name="touchdowns" placeholder="Touchdowns" value={this.state.touchdowns} onChange={this.handleChange} />
+                  <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
+                <input type="submit" value="Submit" className="button" />
+              </form>
+          </div>
+          </div>
+      </div>
     );
   }
 }
