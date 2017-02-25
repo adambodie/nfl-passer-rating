@@ -2,6 +2,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
+import aValue from './aValue';
+import bValue from './bValue';
+import cValue from './cValue';
+import dValue from './dValue';
+import eValue from './eValue';
 
 class Application extends React.Component {
   constructor(props) {
@@ -29,6 +34,14 @@ class Application extends React.Component {
     const d = parseInt(this.state.touchdowns);
     const e = parseInt(this.state.interceptions);
     alert(a + b + c + d + e);
+    /*const aValue = aValue(a, b);
+    console.log(aValue);
+    const bValue = bValue(c, b);
+    const cValue = cValue(d, b);
+    const dValue = dValue(e, b);
+    const eValue = eValue(aValue, bValue, cValue, dValue);
+    alert(eValue);
+    event.preventDefault();*/
     event.preventDefault();
   }
 
@@ -38,7 +51,7 @@ class Application extends React.Component {
       <Header />
           <div className="row">
             <div className="column medium-3">
-              <img class="thumbnail" src="https://placehold.it/850x850"/>
+              <img className="thumbnail" src="https://placehold.it/850x850"/>
             </div>
             <div className="column medium-9">
               <form onSubmit={this.handleSubmit}>
