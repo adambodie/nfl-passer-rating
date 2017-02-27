@@ -1,9 +1,19 @@
-.header {
-    text-align: center;
+.header, .footer {
     background: #074E68;
     background-size: cover;
     position: relative;
     overflow: visible;
-    padding-top: 2.5rem;
-    padding-bottom: 4.9rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.9rem;
+}
+
+.header {
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 4.9rem;  
+}
+
+.thumbnail {
+  box-shadow: none;
 }

@@ -1,4 +1,4 @@
-let aValue = (completions, attempts) => {
+var aValue = (completions, attempts) => {
   if (attempts < completions) {
     return "More completions than attempts not allowed";
   } else {

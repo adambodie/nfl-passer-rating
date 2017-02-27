@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
+import Team from './Team';
 import Footer from './Footer';
 import aValue from './aValue';
 import bValue from './bValue';
@@ -53,16 +54,28 @@ class Application extends React.Component {
         <Header name="NFL Passer Rating"/>
           <div className="row">
             <div className="column medium-3">
-              <img className="thumbnail" src="https://placehold.it/850x850"/>
+              <Team />
             </div>
             <div className="column medium-9">
               <form onSubmit={this.handleSubmit}>
-                <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
+                <div className="column medium-4">
+                  <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
+                </div>
+                <div className="column medium-4">
                 <input type="text" name="attempts" placeholder="Attempts" value={this.state.attempts} onChange={this.handleChange}/>
-                <input type="text" name="yards" placeholder="Yards" value={this.state.yards} onChange={this.handleChange} />
-                <input type="text" name="touchdowns" placeholder="Touchdowns" value={this.state.touchdowns} onChange={this.handleChange} />
-                <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
-                <input type="submit" value="Submit" className="button" />
+                </div>
+                <div className="column medium-4">
+                  <input type="text" name="yards" placeholder="Yards" value={this.state.yards} onChange={this.handleChange} />
+                </div>
+                <div className="column medium-4">
+                  <input type="text" name="touchdowns" placeholder="Touchdowns" value={this.state.touchdowns} onChange={this.handleChange} />
+                </div>
+                <div className="column medium-4">
+                  <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
+                </div>
+                  <div className="column medium-4">
+                <input type="submit" value="Submit" className="expanded button" />
+                </div>
               </form>
             </div>
           </div>
