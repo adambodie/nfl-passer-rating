@@ -15,6 +15,7 @@
     "jquery": "^3.1.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-select": "^1.0.0-rc.3",
     "what-input": "^4.0.6"
   },
   "devDependencies": {

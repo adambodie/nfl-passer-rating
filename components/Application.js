@@ -53,10 +53,10 @@ class Application extends React.Component {
       <div>
         <Header name="NFL Passer Rating"/>
           <div className="row">
-            <div className="column medium-3">
+            <div className="column medium-3 teams">
               <Team />
             </div>
-            <div className="column medium-9">
+            <div className="column medium-9 stats">
               <form onSubmit={this.handleSubmit}>
                 <div className="column medium-4">
                   <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
