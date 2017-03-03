@@ -21,7 +21,7 @@ class Application extends React.Component {
       attempts: '',
       yards: '',
       touchdowns: '',
-      interceptions: ''
+      interceptions: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,12 +39,12 @@ class Application extends React.Component {
   }
 
   handleSubmit(event) {
-    let a = parseInt(this.state.completions);
-    let b = parseInt(this.state.attempts);
-    let c = parseInt(this.state.yards);
-    let d = parseInt(this.state.touchdowns);
-    let e = parseInt(this.state.interceptions);
-    alert(eValue(aValue(a,b), bValue(c,b), cValue(d,b), dValue(e,b)));
+    let a = this.state.completions;
+    let b = this.state.attempts;
+    let c = this.state.yards;
+    let d = this.state.touchdowns;
+    let e = this.state.interceptions;
+    alert(eValue(aValue(a,b), bValue(c,b), cValue(d,b), dValue(e,b)).toFixed(1));
     event.preventDefault();
   }
 
@@ -83,5 +83,13 @@ class Application extends React.Component {
       </div>
     );
   }
+}
+
+Application.propTypes = {
+  completions: React.PropTypes.number,
+  attempts: React.PropTypes.number,
+  yards: React.PropTypes.number,
+  touchdowns: React.PropTypes.number,
+  interceptions: React.PropTypes.number
 }
 export default Application;

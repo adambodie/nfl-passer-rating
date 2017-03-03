@@ -1,5 +1,5 @@
 var eValue = (a, b, c, d) => {
-      let e = ((a + b + c + d)/ 6) * 100;;
+      let e = ((a + b + c + d)/ 6) * 100;
       if (e > 158.3) {
         e = 158.3;
       }
