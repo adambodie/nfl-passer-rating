@@ -7,14 +7,13 @@ import Footer from './Footer';
 import Rating from './Rating';
 
 class Application extends React.Component {
-
   render() {
     return (
       <div>
-        <Header name="NFL Passer Rating"/>
+        <Header name="NFL Passer Rating" />
           <div className="row">
             <div className="column medium-3 teams">
-              <Team />
+              <Team onChange={this.handleColorChange}/>
             </div>
             <div className="column medium-9 stats">
               <Rating />

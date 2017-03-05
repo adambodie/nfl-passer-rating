@@ -2,6 +2,7 @@
 import React from 'react';
 
 class Header extends React.Component {
+
   render() {
     return (<header className="header">
               <h1 className="headline">{this.props.name}</h1>
@@ -11,7 +12,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: React.PropTypes.string.isRequired,
 }
 
 export default Header;
