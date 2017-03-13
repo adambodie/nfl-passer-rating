@@ -1,25 +1,27 @@
 // Libs
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
 import Team from './Team';
-import Footer from './Footer';
 import Rating from './Rating';
 
 class Application extends React.Component {
   render() {
     return (
-      <div>
-        <Header name="NFL Passer Rating" />
+      <div >
+          <header className="header">
+            <h1 className="headline">NFL Passer Rating</h1>
+          </header>
           <div className="row">
             <div className="column medium-3 teams">
-              <Team onChange={this.handleColorChange}/>
+              <Team />
             </div>
             <div className="column medium-9 stats">
               <Rating />
             </div>
           </div>
-          <Footer/>
+          <footer className = "footer" >
+            <h3>Adam Bodie <span>©{new Date().getFullYear()}</span></h3>
+            </footer>
       </div>
     );
   }

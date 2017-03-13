@@ -1,11 +1,11 @@
 // Libs
 import React from 'react';
 import ReactDOM from 'react-dom';
-import aValue from './aValue';
-import bValue from './bValue';
-import cValue from './cValue';
-import dValue from './dValue';
-import eValue from './eValue';
+import aValue from '../scripts/aValue';
+import bValue from '../scripts/bValue';
+import cValue from '../scripts/cValue';
+import dValue from '../scripts/dValue';
+import eValue from '../scripts/eValue';
 
 
 

@@ -44,30 +44,26 @@ var options = [
 class Team extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'nfl', color: '#FFFFFF', backgroundColor: '#013A73'};
-
+    this.state = {value: 'nfl'};
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
-      value: event.value,
-      color: event.color,
-      backgroundColor: event.backgroundColor
+      value: event.value
     });
   }
-
   render() {
     return (
       <div >
-      <img className="thumbnail" src={'img/' + this.state.value + '.gif'} style={{border: '3px solid' + this.state.backgroundColor}}/>
+      <h1>{this.props.color}</h1>
+      <img className="thumbnail" src={'img/' + this.state.value + '.gif'}/>
       <Select
           name="form-field-name"
           value={this.state.value}
           options={options}
           onChange={this.handleChange}
           clearable={false}
-          style={{backgroundColor: this.state.color}}
         />
       </div>
     );
