@@ -3,7 +3,7 @@ var assert = chai.assert;    // Using Assert style
 var expect = chai.expect;    // Using Expect style
 
 describe('aValue', function(){
-var aValue = require('../components/aValue.js');
+var aValue = require('../scripts/aValue.js');
    var expectedValue;
 
   it('returns an error', function() {
@@ -37,7 +37,7 @@ var aValue = require('../components/aValue.js');
 
 
 describe('bValue', function(){
-var bValue = require('../components/bValue.js');
+var bValue = require('../scripts/bValue.js');
    var expectedValue;
 
   it('returns zero', function() {
@@ -61,7 +61,7 @@ var bValue = require('../components/bValue.js');
 });
 
 describe('cValue', function(){
-var cValue = require('../components/cValue.js');
+var cValue = require('../scripts/cValue.js');
    var expectedValue;
 
   it('returns zero', function() {
@@ -86,7 +86,7 @@ var cValue = require('../components/cValue.js');
 });
 
 describe('dValue', function(){
-var dValue = require('../components/dValue.js');
+var dValue = require('../scripts/dValue.js');
    var expectedValue;
 
   it('returns zero', function() {
