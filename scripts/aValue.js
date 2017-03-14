@@ -1,4 +1,7 @@
 var aValue = (completions, attempts) => {
+  if (attempts < 0 || completions < 0) {
+    return "Must be greater than or equal to zero";
+  }
   if (attempts < completions) {
     return "More completions than attempts not allowed";
   } else {
