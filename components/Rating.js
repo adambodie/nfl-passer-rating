@@ -37,12 +37,12 @@ class Rating extends React.Component {
   }
 
   handleSubmit(event) {
-    let a = this.state.completions;
-    let b = this.state.attempts;
-    let c = this.state.yards;
-    let d = this.state.touchdowns;
-    let e = this.state.interceptions;
-    let result = eValue(aValue(a,b), bValue(c,b), cValue(d,b), dValue(e,b)).toFixed(1);
+    let a = parseFloat(this.state.completions);
+    let b = parseFloat(this.state.attempts);
+    let c = parseFloat(this.state.yards);
+    let d = parseFloat(this.state.touchdowns);
+    let e = parseFloat(this.state.interceptions);
+    let result = eValue(a, b, c, d, e);
     this.setState({passerRating: result });
     this.setState({completions: '', attempts: '', yards: '', touchdowns: '', interceptions: ''});
     event.preventDefault();

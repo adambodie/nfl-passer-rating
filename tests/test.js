@@ -147,12 +147,17 @@ var eValue = require('../scripts/eValue.js');
 
    it('returns zero', function() {
      expectedValue = 0;
-     expect(eValue(0,0,0,0)).to.equal(expectedValue);
+     expect(eValue(0,10,0,0,2)).to.equal(expectedValue);
    });
 
    it('returns the maximum value allowed', function() {
      expectedValue = 158.3;
-     expect(eValue(2.375,2.375,2.375,2.375)).to.equal(expectedValue);
+     expect(eValue(25,25,500,5,0)).to.equal(expectedValue);
+   });
+
+   it('returns correct value', function() {
+     expectedValue = 95.2;
+     expect(eValue(43,62,466,2,1)).to.equal(expectedValue);
    });
 
 });
