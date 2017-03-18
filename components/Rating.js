@@ -7,8 +7,6 @@ import cValue from '../scripts/cValue';
 import dValue from '../scripts/dValue';
 import eValue from '../scripts/eValue';
 
-
-
 class Rating extends React.Component {
   constructor(props) {
     super(props);
@@ -37,12 +35,33 @@ class Rating extends React.Component {
   }
 
   handleSubmit(event) {
+    let pattern = /\D/;
+
     let a = parseFloat(this.state.completions);
     let b = parseFloat(this.state.attempts);
     let c = parseFloat(this.state.yards);
     let d = parseFloat(this.state.touchdowns);
     let e = parseFloat(this.state.interceptions);
+
+    let values = [a,b,c,d,e];
+
     let result = eValue(a, b, c, d, e);
+
+    for (var i = 0; i < values.length; i++) {
+      if (pattern.test(values[i]) == true) {
+        result = "Please try again";
+      }
+    }
+    if ( a > b ) {
+      result = "More completions than attempts not allowed.  Try again.";
+    }
+    if ( d > b ) {
+      result = "More touchdowns than attempts not allowed.  Try again.";
+    }
+    if ( e > b ) {
+      result = "More interceptions than attempts not allowed.  Try again.";
+    }
+    
     this.setState({passerRating: result });
     this.setState({completions: '', attempts: '', yards: '', touchdowns: '', interceptions: ''});
     event.preventDefault();
@@ -51,6 +70,7 @@ class Rating extends React.Component {
   render() {
     return (
       <div>
+      <div className="row">
         <form onSubmit={this.handleSubmit}>
             <div className="column medium-4">
               <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
@@ -71,7 +91,10 @@ class Rating extends React.Component {
               <input type="submit" value="Submit" className="expanded button" />
             </div>
           </form>
+          </div>
+          <div className="row">
           <h2 className="passerRating">{this.state.passerRating}</h2>
+          </div>
         </div>
     );
   }
