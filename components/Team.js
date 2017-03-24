@@ -46,6 +46,7 @@ class Team extends React.Component {
     super(props);
     this.state = {value: 'nfl'};
     this.handleChange = this.handleChange.bind(this);
+    this.handleColorChange = this.handleColorChange.bind(this);
   }
 
   handleChange(event) {
@@ -53,7 +54,12 @@ class Team extends React.Component {
       value: event.value
     });
   }
+  handleColorChange() {
+
+  }
   render() {
+    const color = this.props.color;
+    const backgroundColor = this.props.backgroundColor;
     return (
       <div >
       <h1>{this.props.color}</h1>
@@ -63,6 +69,7 @@ class Team extends React.Component {
           value={this.state.value}
           options={options}
           onChange={this.handleChange}
+          onColorChange={this.handleColorChange}
           clearable={false}
         />
       </div>
