@@ -44,32 +44,24 @@ var options = [
 class Team extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'nfl'};
     this.handleChange = this.handleChange.bind(this);
-    this.handleColorChange = this.handleColorChange.bind(this);
   }
-
   handleChange(event) {
-    this.setState({
-      value: event.value
-    });
-  }
-  handleColorChange() {
-
+      this.props.onValueChange(event.value);
+      this.props.onColorChange(event.color);
+      this.props.onBackgroundChange(event.backgroundColor);
   }
   render() {
     const color = this.props.color;
     const backgroundColor = this.props.backgroundColor;
+    const value = this.props.value;
     return (
       <div >
-      <h1>{this.props.color}</h1>
-      <img className="thumbnail" src={'img/' + this.state.value + '.gif'}/>
       <Select
           name="form-field-name"
-          value={this.state.value}
+          value={value}
           options={options}
           onChange={this.handleChange}
-          onColorChange={this.handleColorChange}
           clearable={false}
         />
       </div>
