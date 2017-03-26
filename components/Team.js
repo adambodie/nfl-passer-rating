@@ -5,71 +5,66 @@ import 'react-select/dist/react-select.css';
 
 
 var options = [
-    { value: 'nfl', label: 'NFL', color: '#FFFFFF', backgroundColor: '#013A73' },
-    { value: 'az', label: 'Arizona Cardinals', color: '#FFFFFF', backgroundColor: '#B00539' },
-    { value: 'atl', label: 'Atlanta Falcons', color: '#C9233F', backgroundColor: "#000000" },
-    { value: 'bal', label: 'Baltimore Ravens', color: '#E4B20C', backgroundColor: '#26125C' },
-    { value: 'buf', label: 'Buffalo Bills', color: '#FFFFFF', backgroundColor: '#043284' },
-    { value: 'car', label: 'Carolina Panthers', color: '#0498D7', backgroundColor: '#000000' },
-    { value: 'chi', label: 'Chicago Bears', color: '#DF6108', backgroundColor: '#00142C' },
-    { value: 'cin', label: 'Cincinnati Bengals', color: '#000000', backgroundColor: '#F24E25' },
-    { value: 'cle', label: 'Cleveland Browns', color: '#EC5614', backgroundColor: '#391000' },
-    { value: 'dal', label: 'Dallas Cowboys', color: '#C2C2C6', backgroundColor: '#0D254C' },
-    { value: 'den', label: 'Denver Broncos', color: '#0C2244', backgroundColor: '#F84D04'  },
-    { value: 'det', label: 'Detroit Lions', color: '#A5ACAF', backgroundColor: '#006DB0'  },
-    { value: 'gb', label: 'Green Bay Packers', color: '#313F36', backgroundColor: '#FCCF00'  },
-    { value: 'hou', label: 'Houston Texans', color: '#C9243F', backgroundColor: '#00143F'  },
-    { value: 'ind', label: 'Indianapolis Colts', color: '#FFFFFF', backgroundColor: '#043A74'  },
-    { value: 'jax', label: 'Jacksonville Jaguars', color: '#000000', backgroundColor: '#006779'  },
-    { value: 'kc', label: 'Kansas City Chiefs', color: '#F2C800', backgroundColor: '#B20032'  },
-    { value: 'lac', label: 'Los Angeles Chargers', color: '#FFC10C', backgroundColor: '#001744'  },
-    { value: 'lar', label: 'Los Angeles Rams', color: '#C9B074', backgroundColor: '#0D254C'  },
-    { value: 'mia', label: 'Miami Dolphins', color: '#FFFFFF', backgroundColor: '#00919E'  },
-    { value: 'min', label: 'Minnesota Vikings', color: '#FFC72C', backgroundColor: '#582C83'  },
-    { value: 'ne', label: 'New England Patriots', color: '#DCDDDD', backgroundColor: '#0C2244'  },
-    { value: 'no', label: 'New Orleans Saints', color: '#C9B074', backgroundColor: '#000000'  },
-    { value: 'nyg', label: 'New York Giants', color: '#AD0334', backgroundColor: '#192E6C'  },
-    { value: 'nyj', label: 'New York Jets', color: '#FFFFFF', backgroundColor: '#1C322C'  },
-    { value: 'oak', label: 'Oakland Raiders', color: '#000000', backgroundColor: '#C4CACC'  },
-    { value: 'phi', label: 'Philadelphia Eagles', color: '#000000', backgroundColor: '#00464F'  },
-    { value: 'pit', label: 'Pittsburgh Steelers', color: '#FCBA1C', backgroundColor: '#000000'  },
-    { value: 'sf', label: 'San Francisco 49ers', color: '#C4031E', backgroundColor: '#BCA05D'  },
-    { value: 'sea', label: 'Seattle Seahawks', color: '#7D5B24', backgroundColor: '#0C2244'  },
-    { value: 'tb', label: 'Tampa Bay Buccaneers', color: '#000000', backgroundColor: '#D60A0B'  },
-    { value: 'ten', label: 'Tennessee Titans', color: '#FFFFFF', backgroundColor: '#648FCC'  },
-    { value: 'was', label: 'Washington Redskins', color: '#F1C500', backgroundColor: '#57202E'  }
+  { value: 'nfl', label: 'NFL', primaryColor: '#FFFFFF', backgroundColor: '#013A73', secondaryColor: '#DB1B26' },
+  { value: 'az', label: 'Arizona Cardinals', primaryColor: '#FFFFFF', backgroundColor: '#B00539', secondaryColor: '#FFC315' },
+  { value: 'atl', label: 'Atlanta Falcons', primaryColor: '#C9233F', backgroundColor: "#000000", secondaryColor: '#D1D2D4' },
+  { value: 'bal', label: 'Baltimore Ravens', primaryColor: '#E4B20C', backgroundColor: '#26125C', secondaryColor: '#000000' },
+  { value: 'buf', label: 'Buffalo Bills', primaryColor: '#FFFFFF', backgroundColor: '#233C7F',secondaryColor: '#CD202F' },
+  { value: 'car', label: 'Carolina Panthers', primaryColor: '#0498D7', backgroundColor: '#000000', secondaryColor: '#D2D3D4' },
+  { value: 'chi', label: 'Chicago Bears', primaryColor: '#DF6108', backgroundColor: '#00142C', secondaryColor: '#FFFFFF' },
+  { value: 'cin', label: 'Cincinnati Bengals', primaryColor: '#FFFFFF', backgroundColor: '#F24E25', secondaryColor: '#000000' },
+  { value: 'cle', label: 'Cleveland Browns', primaryColor: '#FFFFFF', backgroundColor: '#391000', secondaryColor: '#EC5614' },
+  { value: 'dal', label: 'Dallas Cowboys', primaryColor: '#C2C2C6', backgroundColor: '#0D254C', secondaryColor: '#FFFFFF' },
+  { value: 'den', label: 'Denver Broncos', primaryColor: '#0C2244', backgroundColor: '#F84D04', secondaryColor: '#FFFFFF'  },
+  { value: 'det', label: 'Detroit Lions', primaryColor: '#A5ACAF', backgroundColor: '#006DB0', secondaryColor: '#FFFFFF'  },
+  { value: 'gb', label: 'Green Bay Packers', primaryColor: '#FFFFFF', backgroundColor: '#313F36', secondaryColor: '#FCCF00'  },
+  { value: 'hou', label: 'Houston Texans', primaryColor: '#C9243F', backgroundColor: '#00143F', secondaryColor: '#FFFFFF'  },
+  { value: 'ind', label: 'Indianapolis Colts', primaryColor: '#043A74', backgroundColor: '#043A74', secondaryColor: '#FFFFFF'  },
+  { value: 'jax', label: 'Jacksonville Jaguars', primaryColor: '#000000', backgroundColor: '#006779', secondaryColor: '#D9A218'  },
+  { value: 'kc', label: 'Kansas City Chiefs', primaryColor: '#F2C800', backgroundColor: '#B20032', secondaryColor: 'white'  },
+  { value: 'lac', label: 'Los Angeles Chargers', primaryColor: '#FFC10C', backgroundColor: '#001744', secondaryColor: '#1076C3'  },
+  { value: 'lar', label: 'Los Angeles Rams', primaryColor: '#C9B074', backgroundColor: '#0D254C', secondaryColor: '#FFFFFF'  },
+  { value: 'mia', label: 'Miami Dolphins', primaryColor: '#FFFFFF', backgroundColor: '#00919E', secondaryColor: '#FF8501'  },
+  { value: 'min', label: 'Minnesota Vikings', primaryColor: '#FFFFFF', backgroundColor: '#582C83', secondaryColor: '#FFC72C'  },
+  { value: 'ne', label: 'New England Patriots', primaryColor: '#DCDDDD', backgroundColor: '#0C2244', secondaryColor: '#CC122C'  },
+  { value: 'no', label: 'New Orleans Saints', primaryColor: '#FFFFFF', backgroundColor: '#000000', secondaryColor: '#C9B074'  },
+  { value: 'nyg', label: 'New York Giants', primaryColor: '#FFFFFF', backgroundColor: '#192E6C', secondaryColor: '#AD0334'  },
+  { value: 'nyj', label: 'New York Jets', primaryColor: '#1C322C', backgroundColor: '#1C322C', secondaryColor: '#FFFFFF'  },
+  { value: 'oak', label: 'Oakland Raiders', primaryColor: '#FFFFFF', backgroundColor: '#C4CACC', secondaryColor: '#000000'  },
+  { value: 'phi', label: 'Philadelphia Eagles', primaryColor: '#000000', backgroundColor: '#00464F', secondaryColor: '#BAC4C9'  },
+  { value: 'pit', label: 'Pittsburgh Steelers', primaryColor: '#FFFFFF', backgroundColor: '#000000', secondaryColor: '#FCBA1C'  },
+  { value: 'sf', label: 'San Francisco 49ers', primaryColor: '#FFFFFF', backgroundColor: '#C4031E', secondaryColor: '#BCA05D'  },
+  { value: 'sea', label: 'Seattle Seahawks', primaryColor: '#A5ACB0', backgroundColor: '#0C2244', secondaryColor: '#66BD29'  },
+  { value: 'tb', label: 'Tampa Bay Buccaneers', primaryColor: '#000000', backgroundColor: '#D60A0B', secondaryColor: '#B1BABF'  },
+  { value: 'ten', label: 'Tennessee Titans', primaryColor: '#FFFFFF', backgroundColor: '#648FCC', secondaryColor: '#002A5C'  },
+  { value: 'was', label: 'Washington Redskins', primaryColor: '#FFFFFF', backgroundColor: '#57202E', secondaryColor: '#F1C500'  }
+
 
 ];
 
 class Team extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'nfl'};
     this.handleChange = this.handleChange.bind(this);
-    this.handleColorChange = this.handleColorChange.bind(this);
   }
-
   handleChange(event) {
-    this.setState({
-      value: event.value
-    });
-  }
-  handleColorChange() {
-
+      this.props.onValueChange(event.value);
+      this.props.onPrimaryColorChange(event.primaryColor);
+      this.props.onBackgroundChange(event.backgroundColor);
+      this.props.onSecondaryColorChange(event.secondaryColor);
   }
   render() {
-    const color = this.props.color;
+    const primaryColor = this.props.primaryColor;
+    const secondaryColor = this.props.secondaryColor;
     const backgroundColor = this.props.backgroundColor;
+    const value = this.props.value;
     return (
       <div >
-      <h1>{this.props.color}</h1>
-      <img className="thumbnail" src={'img/' + this.state.value + '.gif'}/>
       <Select
           name="form-field-name"
-          value={this.state.value}
+          value={value}
           options={options}
           onChange={this.handleChange}
-          onColorChange={this.handleColorChange}
           clearable={false}
         />
       </div>
