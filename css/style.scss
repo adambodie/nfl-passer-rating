@@ -1,21 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Ranchers');
 
-
+$ranchers: 'Ranchers', cursive;
 .header, .footer {
     background-size: cover;
     position: relative;
     overflow: visible;
     padding-top: 1.5rem;
     padding-bottom: 2.9rem;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 24px 0 rgba(0, 0, 0, 0.25);
 }
 
 .header {
-  margin-bottom: 20px;
   text-align: center;
-  padding-top: 2.0rem;
-  padding-bottom: 4.4rem;
+
   h1 {
     font-weight: bold;
+    font-family: $ranchers;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 3px;
+    font-size: 4em;
+    padding: 20px;
   }
+}
+
+.footer h3 {
+  font-family: $ranchers;
+  margin-left: 50px;
 }
 
 .thumbnail {
@@ -27,7 +37,7 @@
 }
 
 .stats {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .teams {
@@ -35,5 +45,51 @@
 }
 
 .passerRating {
+    text-align: center;
+    font-family: $ranchers;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 6px #000000;
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  color: #FFFFFF;
   text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 100%;
+  transition: all 0.5s;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 24px 0 rgba(0, 0, 0, 0.25);
+  &:hover span {
+    padding-right: 25px;
+    &:after {
+      opacity: 1;
+      right: 0;
+    }
+  }
+  span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    &:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+  }
+}
+
+[type=text], .Select-placeholder {
+    height: 4rem;
+    font-size: 1.5rem;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 24px 0 rgba(0, 0, 0, 0.25);
+
 }

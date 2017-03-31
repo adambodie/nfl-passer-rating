@@ -61,7 +61,7 @@ class Rating extends React.Component {
     if ( e > b ) {
       result = "More interceptions than attempts not allowed.  Try again.";
     }
-    
+
     this.setState({passerRating: result });
     this.setState({completions: '', attempts: '', yards: '', touchdowns: '', interceptions: ''});
     event.preventDefault();
@@ -88,12 +88,12 @@ class Rating extends React.Component {
               <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
             </div>
             <div className="column medium-4">
-              <input type="submit" value="Submit" className="expanded button" />
+              <button className="button"><span>Submit </span></button>
             </div>
           </form>
           </div>
           <div className="row">
-          <h2 className="passerRating">{this.state.passerRating}</h2>
+          <h1 className="passerRating">{this.state.passerRating}</h1>
           </div>
         </div>
     );
