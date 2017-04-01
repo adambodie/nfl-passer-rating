@@ -1,10 +1,10 @@
 'use strict';
-
+var UglifyJsPlugin = require("uglify-js-plugin");
 var webpackConfig = {
   entry: './app.js',
 
   output: {
-    // path: 'build',
+    path: 'build',
     filename: 'bundle.js'
   },
 
@@ -20,7 +20,14 @@ var webpackConfig = {
         loader: 'style-loader!css-loader!sass-loader'
       }
     ]
-  }
+  },
+  plugins: [
+		new UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+	]
 };
 
 module.exports = webpackConfig;
