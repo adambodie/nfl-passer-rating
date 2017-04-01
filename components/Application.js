@@ -9,35 +9,35 @@ class Application extends React.Component {
     super(props);
     this.state = {
       value: 'nfl',
-      backgroundColor: '#013A73',
-      primaryColor: '#FFFFFF',
+      primaryColor: '#013A73',
+      textColor: '#FFFFFF',
       secondaryColor: '#DB1B26',
     };
     this.handleValueChange = this.handleValueChange.bind(this);
-    this.handlePrimaryColorChange = this.handlePrimaryColorChange.bind(this);
+    this.handletextColorChange = this.handletextColorChange.bind(this);
     this.handleSecondaryColorChange = this.handleSecondaryColorChange.bind(this);
-    this.handleBackgroundColorChange = this.handleBackgroundColorChange.bind(this);
+    this.handleprimaryColorChange = this.handleprimaryColorChange.bind(this);
   }
 
   handleValueChange(value){
     this.setState({value: value});
   }
-  handlePrimaryColorChange(primaryColor){
-    this.setState({primaryColor: primaryColor});
+  handletextColorChange(textColor){
+    this.setState({textColor: textColor});
   }
   handleSecondaryColorChange(secondaryColor){
     this.setState({secondaryColor: secondaryColor});
   }
-  handleBackgroundColorChange(backgroundColor){
-    this.setState({backgroundColor: backgroundColor});
+  handleprimaryColorChange(primaryColor){
+    this.setState({primaryColor: primaryColor});
   }
   render() {
     const colorStyle = {
-      color: this.state.primaryColor,
-      backgroundColor: this.state.backgroundColor,
+      color: this.state.textColor,
+      backgroundColor: this.state.primaryColor,
     };
     const secondaryColorStyle = {
-      color: this.state.primaryColor,
+      color: this.state.textColor,
       backgroundColor: this.state.secondaryColor,
     };
 
@@ -52,9 +52,9 @@ class Application extends React.Component {
               <img className="thumbnail" src={'img/' + value + '.gif'}/>
               <Team
                   onValueChange={this.handleValueChange}
-                  onPrimaryColorChange={this.handlePrimaryColorChange}
+                  ontextColorChange={this.handletextColorChange}
                   onSecondaryColorChange={this.handleSecondaryColorChange}
-                  onBackgroundChange={this.handleBackgroundColorChange}
+                  onBackgroundChange={this.handleprimaryColorChange}
                   />
             </div>
             <div className="column medium-9 stats">
