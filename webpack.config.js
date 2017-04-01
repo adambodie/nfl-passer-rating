@@ -1,5 +1,5 @@
 'use strict';
-var UglifyJsPlugin = require("uglify-js-plugin");
+var UglifyJsPlugin = require("uglify-js-plugin"); 
 var webpackConfig = {
   entry: './app.js',
 
@@ -22,12 +22,12 @@ var webpackConfig = {
     ]
   },
   plugins: [
-		new UglifyJsPlugin({
+    new UglifyJsPlugin({
       compress: {
         warnings: false
       }
     })
-	]
+  ]
 };
 
 module.exports = webpackConfig;
