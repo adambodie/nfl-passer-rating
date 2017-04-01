@@ -8,12 +8,14 @@ class Application extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: 'NFL Passer Rating',
       value: 'nfl',
       primaryColor: '#013A73',
       textColor: '#FFFFFF',
       secondaryColor: '#DB1B26',
     };
     this.handleValueChange = this.handleValueChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
     this.handletextColorChange = this.handletextColorChange.bind(this);
     this.handleSecondaryColorChange = this.handleSecondaryColorChange.bind(this);
     this.handleprimaryColorChange = this.handleprimaryColorChange.bind(this);
@@ -21,6 +23,9 @@ class Application extends React.Component {
 
   handleValueChange(value){
     this.setState({value: value});
+  }
+  handleNameChange(name){
+    this.setState({name: name});
   }
   handletextColorChange(textColor){
     this.setState({textColor: textColor});
@@ -39,13 +44,15 @@ class Application extends React.Component {
     const secondaryColorStyle = {
       color: this.state.textColor,
       backgroundColor: this.state.secondaryColor,
+      textShadow: '4px 4px 8px ' + this.state.primaryColor,
     };
 
     const value = this.state.value;
+    const name = this.state.name;
     return (
       <div style={colorStyle}>
           <header className="header" style={secondaryColorStyle}>
-            <h1 className="headline">NFL Passer Rating</h1>
+            <h1 className="headline">{name}</h1>
           </header>
           <div className="row">
             <div className="column medium-3 teams">
@@ -55,10 +62,11 @@ class Application extends React.Component {
                   ontextColorChange={this.handletextColorChange}
                   onSecondaryColorChange={this.handleSecondaryColorChange}
                   onBackgroundChange={this.handleprimaryColorChange}
+                  onNameChange={this.handleNameChange}
                   />
             </div>
             <div className="column medium-9 stats">
-              <Rating />
+              <Rating/>
             </div>
           </div>
           <footer className = "footer" style={secondaryColorStyle} >

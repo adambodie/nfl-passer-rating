@@ -52,12 +52,14 @@ class Team extends React.Component {
       this.props.ontextColorChange(event.textColor);
       this.props.onBackgroundChange(event.primaryColor);
       this.props.onSecondaryColorChange(event.secondaryColor);
+      this.props.onNameChange(event.label);
   }
   render() {
     const textColor = this.props.textColor;
     const secondaryColor = this.props.secondaryColor;
     const primaryColor = this.props.primaryColor;
     const value = this.props.value;
+    const name = this.props.label;
     return (
       <div >
       <Select
