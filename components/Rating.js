@@ -72,22 +72,22 @@ class Rating extends React.Component {
       <div>
       <div className="row">
         <form onSubmit={this.handleSubmit}>
-            <div className="column medium-4">
+            <div className="small-12 large-4 columns">
               <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
             </div>
-            <div className="column medium-4">
+            <div className="small-12 large-4 columns">
               <input type="text" name="attempts" placeholder="Attempts" value={this.state.attempts} onChange={this.handleChange}/>
             </div>
-            <div className="column medium-4">
+            <div className="small-12 large-4 columns">
               <input type="text" name="yards" placeholder="Yards" value={this.state.yards} onChange={this.handleChange} />
             </div>
-            <div className="column medium-4">
+            <div className="small-12 large-4 columns">
               <input type="text" name="touchdowns" placeholder="Touchdowns" value={this.state.touchdowns} onChange={this.handleChange} />
             </div>
-            <div className="column medium-4">
+            <div className="small-12 large-4 columns">
               <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
             </div>
-            <div className="column medium-4">
+            <div className="small-12 large-4 columns">
               <button className="button"><span>Submit </span></button>
             </div>
           </form>

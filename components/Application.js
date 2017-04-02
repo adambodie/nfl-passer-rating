@@ -55,7 +55,7 @@ class Application extends React.Component {
             <h1 className="headline">{name}</h1>
           </header>
           <div className="row">
-            <div className="column medium-3 teams">
+            <div className="small-12 large-3 columns teams">
               <img className="thumbnail" src={'img/' + value + '.gif'}/>
               <Team
                   onValueChange={this.handleValueChange}
@@ -65,7 +65,7 @@ class Application extends React.Component {
                   onNameChange={this.handleNameChange}
                   />
             </div>
-            <div className="column medium-9 stats">
+            <div className="small-12 large-9 columns stats">
               <Rating/>
             </div>
           </div>
