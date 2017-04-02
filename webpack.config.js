@@ -1,5 +1,6 @@
 'use strict';
-var UglifyJsPlugin = require("uglify-js-plugin"); 
+var UglifyJsPlugin = require("uglify-js-plugin");
+var webpack = require('webpack');
 var webpackConfig = {
   entry: './app.js',
 
@@ -22,6 +23,11 @@ var webpackConfig = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
     new UglifyJsPlugin({
       compress: {
         warnings: false
