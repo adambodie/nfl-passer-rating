@@ -13,7 +13,7 @@ var eValue = (completions, attempts, yards, touchdowns, interceptions) => {
         e = 158.3;
       }
       if (e < 0) {
-        let e = 0;
+        e = 0;
       }
       return parseFloat(e.toFixed(1));
     }

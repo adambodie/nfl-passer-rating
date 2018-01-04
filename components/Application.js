@@ -1,10 +1,9 @@
 // Libs
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import Team from './Team';
 import Rating from './Rating';
 
-class Application extends React.Component {
+export default class Application extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,4 +76,3 @@ class Application extends React.Component {
   }
 }
 
-export default Application;

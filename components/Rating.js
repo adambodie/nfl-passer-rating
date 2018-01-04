@@ -1,13 +1,12 @@
 // Libs
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import aValue from '../scripts/aValue';
 import bValue from '../scripts/bValue';
 import cValue from '../scripts/cValue';
 import dValue from '../scripts/dValue';
 import eValue from '../scripts/eValue';
 
-class Rating extends React.Component {
+export default class Rating extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,14 +43,13 @@ class Rating extends React.Component {
     let e = parseFloat(this.state.interceptions);
 
     let values = [a,b,c,d,e];
-
     let result = eValue(a, b, c, d, e);
 
-    for (var i = 0; i < values.length; i++) {
-      if (pattern.test(values[i]) == true) {
+    values.forEach(value => {
+      if (pattern.test(value) == true) {
         result = "Please try again";
-      }
-    }
+      }      
+    });
     if ( a > b ) {
       result = "More completions than attempts not allowed.  Try again.";
     }
@@ -107,4 +105,3 @@ Rating.propTypes = {
   touchdowns: React.PropTypes.number,
   interceptions: React.PropTypes.number
 }
-export default Rating;
