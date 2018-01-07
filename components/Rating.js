@@ -86,7 +86,11 @@ export default class Rating extends Component {
               <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
             </div>
             <div className="small-12 large-4 columns">
-              <button className="button"><span>Submit </span></button>
+              <button className="button"  style={{
+                color: this.props.textColors, 
+                backgroundColor: this.props.secondaryColors, 
+                textShadow: '4px 4px 8px ' + this.props.primaryColors
+                }}><span>Submit </span></button>
             </div>
           </form>
           </div>

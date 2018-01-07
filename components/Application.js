@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import Team from './Team';
 import Rating from './Rating';
+import Header from './Header';
+import Footer from './Footer';
 
 export default class Application extends Component {
   constructor(props) {
@@ -36,23 +38,20 @@ export default class Application extends Component {
     this.setState({primaryColor: primaryColor});
   }
   render() {
-    const colorStyle = {
-      color: this.state.textColor,
-      backgroundColor: this.state.primaryColor,
-    };
-    const secondaryColorStyle = {
-      color: this.state.textColor,
-      backgroundColor: this.state.secondaryColor,
-      textShadow: '4px 4px 8px ' + this.state.primaryColor,
-    };
-
+    const textColor = this.state.textColor;
+    const secondaryColor = this.state.secondaryColor;
+    const primaryColor = this.state.primaryColor;
     const value = this.state.value;
     const name = this.state.name;
+
     return (
-      <div style={colorStyle}>
-          <header className="header" style={secondaryColorStyle}>
-            <h1 className="headline">{name}</h1>
-          </header>
+      <div style={{color: textColor, backgroundColor: primaryColor}}>
+          <Header 
+          names={name}
+          textColors={textColor} 
+          secondaryColors={secondaryColor} 
+          primaryColors={primaryColor} 
+          />
           <div className="row">
             <div className="small-12 large-3 columns teams">
               <img className="thumbnail" src={'img/' + value + '.gif'}/>
@@ -65,12 +64,18 @@ export default class Application extends Component {
                   />
             </div>
             <div className="small-12 large-9 columns stats">
-              <Rating/>
+              <Rating 
+                  textColors={textColor} 
+                  secondaryColors={secondaryColor} 
+                  primaryColors={primaryColor}              
+              />
             </div>
           </div>
-          <footer className = "footer" style={secondaryColorStyle} >
-            <h3>Adam Bodie <span>©{new Date().getFullYear()}</span></h3>
-            </footer>
+          <Footer 
+              textColors={textColor} 
+              secondaryColors={secondaryColor} 
+              primaryColors={primaryColor}
+          />
       </div>
     );
   }
