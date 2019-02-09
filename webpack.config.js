@@ -1,39 +1,32 @@
-'use strict';
-var UglifyJsPlugin = require("uglify-js-plugin");
-var webpack = require('webpack');
-var webpackConfig = {
-  entry: './app.js',
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-  output: {
-    path: 'build',
-    filename: 'bundle.js'
-  },
+const htmlWebpackPlugin = new HtmlWebPackPlugin({
+  template: "./src/index.html",
+  filename: "./index.html"
+});
 
+module.exports = {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel-loader']
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
-        test: /\.s?css$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        test: /\.css$/,
+        use: [
+			{
+				loader: "style-loader"
+			},
+          {
+            loader: "css-loader"
+          }
+        ]
       }
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
-    new UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  ]
+  plugins: [htmlWebpackPlugin]
 };
-
-module.exports = webpackConfig;

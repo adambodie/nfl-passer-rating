@@ -1,5 +1,5 @@
-// Libs
 import React, { Component } from 'react';
+import { Row, Column } from 'react-foundation';
 import aValue from '../scripts/aValue';
 import bValue from '../scripts/bValue';
 import cValue from '../scripts/cValue';
@@ -60,52 +60,43 @@ export default class Rating extends Component {
       result = "More interceptions than attempts not allowed.  Try again.";
     }
 
-    this.setState({passerRating: result });
-    this.setState({completions: '', attempts: '', yards: '', touchdowns: '', interceptions: ''});
+    this.setState({passerRating: result, completions: '', attempts: '', yards: '', touchdowns: '', interceptions: ''});
     event.preventDefault();
   }
 
   render() {
     return (
       <div>
-      <div className="row">
+      <Row className="display grid-x">
         <form onSubmit={this.handleSubmit}>
-            <div className="small-12 large-4 columns">
+            <Column large={4}>
               <input type="text" name="completions" placeholder="Completions" value={this.state.completions} onChange={this.handleChange} />
-            </div>
-            <div className="small-12 large-4 columns">
+            </Column>
+            <Column large={4}>
               <input type="text" name="attempts" placeholder="Attempts" value={this.state.attempts} onChange={this.handleChange}/>
-            </div>
-            <div className="small-12 large-4 columns">
+            </Column>
+            <Column large={4}>
               <input type="text" name="yards" placeholder="Yards" value={this.state.yards} onChange={this.handleChange} />
-            </div>
-            <div className="small-12 large-4 columns">
+            </Column>
+            <Column large={4}>
               <input type="text" name="touchdowns" placeholder="Touchdowns" value={this.state.touchdowns} onChange={this.handleChange} />
-            </div>
-            <div className="small-12 large-4 columns">
+            </Column>
+            <Column large={4}>
               <input type="text" name="interceptions" placeholder="Interceptions" value={this.state.interceptions} onChange={this.handleChange} />
-            </div>
-            <div className="small-12 large-4 columns">
+            </Column>
+            <Column large={4}>
               <button className="button"  style={{
                 color: this.props.textColors, 
                 backgroundColor: this.props.secondaryColors, 
                 textShadow: '4px 4px 8px ' + this.props.primaryColors
                 }}><span>Submit </span></button>
-            </div>
+            </Column>
           </form>
-          </div>
-          <div className="row">
+          </Row>
+          <Row className="display grid-x">
           <h1 className="passerRating">{this.state.passerRating}</h1>
-          </div>
+          </Row>
         </div>
     );
   }
-}
-
-Rating.propTypes = {
-  completions: React.PropTypes.number,
-  attempts: React.PropTypes.number,
-  yards: React.PropTypes.number,
-  touchdowns: React.PropTypes.number,
-  interceptions: React.PropTypes.number
 }

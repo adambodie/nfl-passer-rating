@@ -1,7 +1,5 @@
-// Libs
 import React, { Component } from 'react';
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 import teams from '../scripts/teams.js';
 
 export default class Team extends Component {
@@ -17,11 +15,7 @@ export default class Team extends Component {
       this.props.onNameChange(event.label);
   }
   render() {
-    const textColor = this.props.textColor;
-    const secondaryColor = this.props.secondaryColor;
-    const primaryColor = this.props.primaryColor;
-    const value = this.props.value;
-    const name = this.props.label;
+    const { textColor, secondaryColor, primaryColor, value, name } = this.props;
     return (
       <div >
       <Select
