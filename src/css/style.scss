@@ -7,7 +7,9 @@ $ranchers: 'Ranchers', cursive;
     overflow: visible;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 24px 0 rgba(0, 0, 0, 0.25);
 }
-
+.teams {
+  color: black;
+}
 .header {
   text-align: center;
 
@@ -105,3 +107,7 @@ $ranchers: 'Ranchers', cursive;
     max-width: 80%;
   }  
 }
+
+  .css-vj8t7z, .css-1hwfws3 {
+    height: 50px;
+  }

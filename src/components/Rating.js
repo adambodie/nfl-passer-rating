@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { Row, Column } from 'react-foundation';
-import aValue from '../scripts/aValue';
-import bValue from '../scripts/bValue';
-import cValue from '../scripts/cValue';
-import dValue from '../scripts/dValue';
 import eValue from '../scripts/eValue';
 
 export default class Rating extends Component {

@@ -17,7 +17,6 @@ export default class Team extends Component {
   render() {
     const { textColor, secondaryColor, primaryColor, value, name } = this.props;
     return (
-      <div >
       <Select
           name="form-field-name"
           value={value}
@@ -25,7 +24,6 @@ export default class Team extends Component {
           onChange={this.handleChange}
           clearable={false}
         />
-      </div>
     );
   }
 }
