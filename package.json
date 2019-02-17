@@ -4,21 +4,30 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Adam Bodie",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.0.0",
+    "jest-dom": "^3.1.2",
+    "jest-pnp-resolver": "^1.1.0",
+    "jest-resolve": "^24.1.0",
+    "jest-watch-typeahead": "^0.2.1",
     "node-sass": "^4.11.0",
+    "react-app-polyfill": "^0.2.1",
     "react-foundation": "^0.9.6",
+    "react-test-renderer": "^16.8.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.3",
@@ -30,5 +39,49 @@
     "react-dom": "^16.8.1",
     "react-select": "^2.3.0"
   },
-  "description": ""
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/tests/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "C:\\Users\\Adam Bodie\\Documents\\GitHub\\nfl-passer-rating-react\\node_modules\\jest-watch-typeahead\\filename.js",
+      "C:\\Users\\Adam Bodie\\Documents\\GitHub\\nfl-passer-rating-react\\node_modules\\jest-watch-typeahead\\testname.js"
+    ]
+  }
 }
