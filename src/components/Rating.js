@@ -172,7 +172,7 @@ export default class Rating extends Component {
                   </form>
               </Row>
               <Row className="display grid-x">
-                  <h1 className="passerRating">{passerRating}</h1>
+                  <h3 className="passerRating">Passer Rating:  <span>{passerRating}</span></h3>
               </Row>
           </React.Fragment>
       );

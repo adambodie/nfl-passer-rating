@@ -47,7 +47,7 @@ export default class Application extends Component {
 					secondaryColors={secondaryColor} 
 					primaryColors={primaryColor} 
 				/>
-				<Row className='display grid-x'>
+				<Row className='display grid-x main'>
 					<Column large={3} className='teams'>
 						<img className="thumbnail" src={`http://nfl-passer-rating.bodiewebdesign.com/img/${value}.gif`}/>
 						<Team
