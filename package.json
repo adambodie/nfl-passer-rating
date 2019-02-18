@@ -78,10 +78,6 @@
       "web.jsx",
       "jsx",
       "node"
-    ],
-    "watchPlugins": [
-      "C:\\Users\\Adam Bodie\\Documents\\GitHub\\nfl-passer-rating-react\\node_modules\\jest-watch-typeahead\\filename.js",
-      "C:\\Users\\Adam Bodie\\Documents\\GitHub\\nfl-passer-rating-react\\node_modules\\jest-watch-typeahead\\testname.js"
     ]
   }
 }
