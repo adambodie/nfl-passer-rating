@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "@material-ui/core": "^4.8.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-select": "^2.3.0"

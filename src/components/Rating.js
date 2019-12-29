@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Column } from 'react-foundation';
+import Button from '@material-ui/core/Button';
 
 export const aValue = (completions, attempts) => {
 	if (attempts < 0 || completions < 0) {
@@ -163,11 +164,11 @@ export default class Rating extends Component {
                           <input type="text" name="interceptions" placeholder="Interceptions" value={interceptions} onChange={this.handleChange} />
                       </Column>
                       <Column large={4}>
-                          <button className="button"  style={{
+                      <Button variant="contained" style={{
                               color: textColors, 
                               backgroundColor: secondaryColors, 
                               textShadow: `4px 4px 8px ${primaryColors}`
-                            }}><span>Submit </span></button>
+                            }}><span>Submit </span></Button>
                       </Column>
                   </form>
               </Row>
