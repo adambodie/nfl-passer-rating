@@ -27,7 +27,6 @@
     "jest-watch-typeahead": "^0.2.1",
     "node-sass": "^4.11.0",
     "react-app-polyfill": "^0.2.1",
-    "react-foundation": "^0.9.6",
     "react-test-renderer": "^16.8.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -37,6 +36,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.8.1",
+    "@material-ui/icons": "^4.5.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-select": "^2.3.0"

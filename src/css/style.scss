@@ -8,9 +8,7 @@ $ranchers: 'Ranchers', cursive;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 24px 0 rgba(0, 0, 0, 0.25);
 }
 
-.main {
-  min-height: 575px;
-}
+
 .teams {
   color: black;
 }
@@ -21,12 +19,10 @@ $ranchers: 'Ranchers', cursive;
     font-weight: bold;
     font-family: $ranchers;
     letter-spacing: 3px;
-    padding: 20px;
   }
 }
 
 .footer {
-  padding: 5px;
   h3 {
     font-family: $ranchers;
     margin-left: 50px;
@@ -41,54 +37,20 @@ $ranchers: 'Ranchers', cursive;
   max-width: 50%;
 }
 
-.stats {
-  margin-top: 30px;
+
+.MuiInputBase-input {
+  background: white!important;
+  width: 100%!important;
 }
-
-.passerRating {
-    text-align: center;
-    font-family: $ranchers;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-shadow: 3px 3px 6px #000000;
-    span {
-      font-size: 1.5em;
-    }
-}
-
-
-.button {
-  display: inline-block;
-  border-radius: 6px;
-  font-weight: bold;
-  border: none;
-  color: #FFFFFF;
+.MuiTypography-h6, #simple-dialog-description {
+  font-family: $ranchers!important;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 100%;
-  transition: all 0.5s;
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 24px 0 rgba(0, 0, 0, 0.25);
-  &:hover span {
-    padding-right: 25px;
-    &:after {
-      opacity: 1;
-      right: 0;
-    }
-  }
-  span {
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-    &:after {
-      content: '\00bb';
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -20px;
-      transition: 0.5s;
-    }
-  }
+
+}
+.MuiTypography-h6 {
+  font-size: 3em!important;
+  text-align: center;
+  
 }
 
 [type=text], .Select-placeholder {
@@ -99,21 +61,10 @@ $ranchers: 'Ranchers', cursive;
 }
 
 @media (min-width: 769px) {
-  .stats {
-    margin-top: 150px;
-  }  
-  .teams {
-    margin-bottom: 100px;
-  }    
-  .header {  
-    h1 {
-      font-size: 8vh;
-    }
-  }
+
   .thumbnail {
     max-width: 80%;
   }  
-}
 
   .css-vj8t7z, .css-1hwfws3 {
     height: 50px;
@@ -121,3 +72,4 @@ $ranchers: 'Ranchers', cursive;
   .css-1g6gooi {
     visibility: hidden;
   }
+}

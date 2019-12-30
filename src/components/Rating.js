@@ -1,6 +1,16 @@
-import React, { Component } from 'react';
-import { Row, Column } from 'react-foundation';
-import Button from '@material-ui/core/Button';
+import React, { Component } from 'react'
+import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
+import Modal from './Modal'
+import RatingButton from './Button'
+
+const fields = [
+    {'name': 'completions'},
+    {'name': 'attempts'},
+    {'name': 'yards'},
+    {'name': 'touchdowns'},
+    {'name': 'interceptions'}
+]
 
 export const aValue = (completions, attempts) => {
 	if (attempts < 0 || completions < 0) {
@@ -82,7 +92,6 @@ export const eValue = (completions, attempts, yards, touchdowns, interceptions) 
 	}
 	return parseFloat(e.toFixed(1));
 }
-  
 
 export default class Rating extends Component {
     constructor(props) {
@@ -94,11 +103,14 @@ export default class Rating extends Component {
             yards: '',
             touchdowns: '',
             interceptions: '',
-            passerRating: ''
+            passerRating: '',
+            open: false,
+            setOpen: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     handleChange(event) {
@@ -110,72 +122,74 @@ export default class Rating extends Component {
             [name]: value
         });
     }
-
-    handleSubmit(event) {
-        const { completions, attempts, yards, touchdowns, interceptions, } = this.state; 
-        let pattern = /\D/;
-        let a = parseFloat(completions);
-        let b = parseFloat(attempts);
-        let c = parseFloat(yards);
+   handleClose() {
+        this.setState({
+            setOpen: false,
+            open: false
+        });
+    }
+    handleSubmit() {
+        const { completions, attempts, yards, touchdowns, interceptions } = this.state
+        let pattern = /\D/
+        let a = parseFloat(completions)
+        let b = parseFloat(attempts)
+        let c = parseFloat(yards)
         let d = parseFloat(touchdowns);
-        let e = parseFloat(interceptions);
+        let e = parseFloat(interceptions)
      
-        let values = [a,b,c,d,e];
-        let result = eValue(a, b, c, d, e);
+        let values = [a,b,c,d,e]
+        let result = eValue(a, b, c, d, e)
     
         values.forEach(value => {
             if (pattern.test(value) == true) {
-                result = "Please try again";
+                result = "Please try again"
             }      
         });
         if ( a > b ) {
-            result = "More completions than attempts not allowed.  Try again.";
+            result = "More completions than attempts not allowed.  Try again."
         }
         if ( d > b ) {
-            result = "More touchdowns than attempts not allowed.  Try again.";
+            result = "More touchdowns than attempts not allowed.  Try again."
         }
         if ( e > b ) {
-            result = "More interceptions than attempts not allowed.  Try again.";
+            result = "More interceptions than attempts not allowed.  Try again."
         }
-        this.setState({passerRating: result, completions: '', attempts: '', yards: '', touchdowns: '', interceptions: ''});
-        event.preventDefault();
+        this.setState({
+            passerRating: result, 
+            completions: '', 
+            attempts: '', 
+            yards: '', 
+            touchdowns: '', 
+            interceptions: '',
+            setOpen: true,
+            open: true
+        });
+        
     }
-
   render() {
-      const { completions, attempts, yards, touchdowns, interceptions, passerRating} = this.state;
-      const { textColors, primaryColors, secondaryColors } = this.props;
+      const { passerRating, open } = this.state
+      const { textColors, secondaryColors, primaryColors } = this.props
       return (
-          <React.Fragment>
-              <Row className="display grid-x">
-                  <form onSubmit={this.handleSubmit}>
-                      <Column large={4}>
-                          <input type="text" name="completions" placeholder="Completions" value={completions} onChange={this.handleChange} />
-                      </Column>
-                      <Column large={4}>
-                          <input type="text" name="attempts" placeholder="Attempts" value={attempts} onChange={this.handleChange}/>
-                      </Column>
-                      <Column large={4}>
-                          <input type="text" name="yards" placeholder="Yards" value={yards} onChange={this.handleChange} />
-                      </Column>
-                      <Column large={4}>
-                          <input type="text" name="touchdowns" placeholder="Touchdowns" value={touchdowns} onChange={this.handleChange} />
-                      </Column>
-                      <Column large={4}>
-                          <input type="text" name="interceptions" placeholder="Interceptions" value={interceptions} onChange={this.handleChange} />
-                      </Column>
-                      <Column large={4}>
-                      <Button variant="contained" style={{
-                              color: textColors, 
-                              backgroundColor: secondaryColors, 
-                              textShadow: `4px 4px 8px ${primaryColors}`
-                            }}><span>Submit </span></Button>
-                      </Column>
-                  </form>
-              </Row>
-              <Row className="display grid-x">
-                  <h3 className="passerRating">Passer Rating:  <span>{passerRating}</span></h3>
-              </Row>
-          </React.Fragment>
+        <Grid container spacing={1}>
+            {fields.map((x, index) => (
+                <Grid item lg={4} key={index}>
+                    <TextField id={x.name} name={x.name} label={x.name.toUpperCase()} onChange={this.handleChange} variant="filled" />
+                </Grid>
+            ))}
+            <RatingButton 
+                handleSubmit={this.handleSubmit} 
+                textColors={textColors} 
+               secondaryColors={secondaryColors} 
+            />
+            <Modal 
+                passerRating={passerRating} 
+                open={open} 
+                handleClose={this.handleClose} 
+                textColors={textColors} 
+                secondaryColors={secondaryColors} 
+                primaryColors={primaryColors}
+            />
+        </Grid>
       );
   }
 }
