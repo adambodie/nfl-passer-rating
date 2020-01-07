@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Select from 'react-select';
-import firebase from '../firebase.js';
+import React, { Component } from 'react'
+import Select from 'react-select'
+import firebase from '../firebase.js'
 
 export default class Team extends Component {
 	constructor(props) {
@@ -11,11 +11,7 @@ export default class Team extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 	handleChange(event) {
-		this.props.onValueChange(event.value);
-		this.props.ontextColorChange(event.textColor);
-		this.props.onBackgroundChange(event.primaryColor);
-		this.props.onSecondaryColorChange(event.secondaryColor);
-		this.props.onNameChange(event.label);
+		this.props.onAllChanges(event.value, event.label, event.textColor, event.primaryColor, event.secondaryColor)
 	}
 	componentDidMount() {
 		const teamsRef = firebase.database().ref();
@@ -38,8 +34,8 @@ export default class Team extends Component {
 
  
 	render() {
-		const { value } = this.props;
-		const { teams } = this.state;
+		const { value } = this.props
+		const { teams } = this.state
 		return (
 			<Select
 				name="form-field-name"
@@ -48,6 +44,6 @@ export default class Team extends Component {
 				onChange={this.handleChange}
 				clearable={false}
 			/>
-		);
+		)
 	}
 }

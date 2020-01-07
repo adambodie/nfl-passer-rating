@@ -14,28 +14,17 @@ export default class Application extends Component {
 			primaryColor: '#013A73',
 			textColor: '#FFFFFF',
 			secondaryColor: '#DB1B26',
-		};
-		this.handleValueChange = this.handleValueChange.bind(this)
-		this.handleNameChange = this.handleNameChange.bind(this)
-		this.handletextColorChange = this.handletextColorChange.bind(this)
-		this.handleSecondaryColorChange = this.handleSecondaryColorChange.bind(this)
-		this.handleprimaryColorChange = this.handleprimaryColorChange.bind(this)
+		}
+		this.handleAllChanges = this.handleAllChanges.bind(this)
 	}
-
-	handleValueChange(value){
-		this.setState({value: value})
-	}
-	handleNameChange(name){
-		this.setState({name: name})
-	}
-	handletextColorChange(textColor){
-		this.setState({textColor: textColor})
-	}
-	handleSecondaryColorChange(secondaryColor){
-		this.setState({secondaryColor: secondaryColor})
-	}
-	handleprimaryColorChange(primaryColor){
-		this.setState({primaryColor: primaryColor})
+	handleAllChanges(value, name, textColor, primaryColor, secondaryColor) {
+		this.setState({
+			value: value,
+			name: name,
+			textColor: textColor,
+			primaryColor: primaryColor,
+			secondaryColor: secondaryColor
+		})
 	}
 	render() {
 		const { textColor, secondaryColor, primaryColor, value, name } = this.state
@@ -50,13 +39,7 @@ export default class Application extends Component {
 				<Grid container style={{padding: '20px'}}>
 					<Grid item lg={3} className='teams'>
 						<img className="thumbnail" src={`http://nfl-passer-rating.bodiewebdesign.com/img/${value}.gif`}/>
-						<Team
-							onValueChange={this.handleValueChange}
-							ontextColorChange={this.handletextColorChange}
-							onSecondaryColorChange={this.handleSecondaryColorChange}
-							onBackgroundChange={this.handleprimaryColorChange}
-							onNameChange={this.handleNameChange}
-						/>
+						<Team onAllChanges={this.handleAllChanges} />
 					</Grid>
 				<Grid container alignItems="center" item lg={9} className='stats'>
 					<Rating 

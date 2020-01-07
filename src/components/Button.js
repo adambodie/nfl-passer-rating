@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
-import Icon from '@material-ui/core/Icon'
+import { Button, Grid, Icon } from '@material-ui/core'
+
 
 export default class RatingButton extends Component {
     constructor(props) {

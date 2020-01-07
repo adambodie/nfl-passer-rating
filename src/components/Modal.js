@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-import Dialog from '@material-ui/core/Dialog';
-import MuiDialogActions from '@material-ui/core/DialogActions';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import IconButton from '@material-ui/core/IconButton';
+import { IconButton, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 
 export default class Modal extends Component {
@@ -36,13 +32,13 @@ export default class Modal extends Component {
                 aria-labelledby="simple-dialog-title"
                 aria-describedby="simple-dialog-description"
                     >
-                <MuiDialogTitle id="simple-dialog-title" style={styles.head}>Passer Rating</MuiDialogTitle>
-                <MuiDialogContent id="simple-dialog-description" style={styles.body}>{passerRating}</MuiDialogContent>
-                    <MuiDialogActions>
+                <DialogTitle id="simple-dialog-title" style={styles.head}>Passer Rating</DialogTitle>
+                <DialogContent id="simple-dialog-description" style={styles.body}>{passerRating}</DialogContent>
+                    <DialogActions>
                     <IconButton edge="start" color="inherit" onClick={this.handleModalClose} aria-label="close">
                         <CloseIcon />
                     </IconButton>
-                    </MuiDialogActions>
+                    </DialogActions>
                 </Dialog>
       )
   }

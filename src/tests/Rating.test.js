@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Rating from '../components/Rating';
-import { aValue, bValue, cValue, dValue, eValue } from '../components/Rating';
+import { aValue, bValue, cValue, dValue, eValue } from '../values';
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
